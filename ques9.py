@@ -45,7 +45,22 @@ def reverse_word(file):
     with open(file,'r') as f:
         text = f.read()
         words = text.split()
-        for word in words:
-            print(word[::-1])
-            
+        reverse = [word[::-1] for word in words]
+        print("Reversed words:", " ".join(reverse))
 reverse_word('ques9.txt')
+
+'''d. Copy even lines of the file to a file named ‘File1’ and odd lines to another file
+named ‘File2’'''
+
+def copy_lines(file):
+    with open(file,'r') as f:
+        lines = f.readlines()
+        
+    with open('File1.txt','w') as f1,open('File2.txt','w') as f2:
+        for i,line in enumerate(lines,start = 1):
+            if i%2 == 0:   
+                f1.write(line)
+            else:
+                f2.write(line)
+            
+copy_lines('ques9.txt')
