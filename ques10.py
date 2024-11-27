@@ -33,8 +33,8 @@ class point:
 # Example usage
 if __name__ == "__main__":
     try:
-        point1 = Point(3, 4)
-        point2 = Point(7, 1)
+        point1 = point(3, 4)
+        point2 = point(7, 1)
         invalid_object = "Not a Point"
         
         print("Point 1:", point1)
