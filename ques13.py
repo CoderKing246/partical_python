@@ -23,5 +23,3 @@ def accept_name():
 
 # Call the function
 accept_name()
-
-

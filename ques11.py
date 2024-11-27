@@ -14,5 +14,3 @@ def print_cubes_dict():
 
 # Call the function
 print_cubes_dict()
-
-
