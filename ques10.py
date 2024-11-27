@@ -24,13 +24,25 @@ class point:
         Returns:
             float: The distance between the two points.
         """
-        return math.sqrt((other.x-self.x)**2 + (other.y-self.y)**2)
+        try:
+            return math.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2)
+        except AttributeError:
+            print("Error: The other object is not a Point.")
+            return None
     
 # Example usage
 if __name__ == "__main__":
-    point1 = point(3, 4)
-    point2 = point(7, 1)
-    
-    print("Point 1:", point1)
-    print("Point 2:", point2)
-    print("Distance between Point 1 and Point 2:", point1.distance(point2))    
+    try:
+        point1 = Point(3, 4)
+        point2 = Point(7, 1)
+        invalid_object = "Not a Point"
+        
+        print("Point 1:", point1)
+        print("Point 2:", point2)
+        print("Distance between Point 1 and Point 2:", point1.distance(point2))
+        
+        # Attempting to calculate the distance with an invalid object
+        print("Distance with an invalid object:", point1.distance(invalid_object))
+        
+    except Exception as e:
+        print(f"An error occurred: {e}")
